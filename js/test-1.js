@@ -69,4 +69,47 @@ const message = logins.includes(loginToFind)
   ? `Пользователь ${loginToFind} найден.`
   : `Пользователь ${loginToFind} не найден.`;
 
-  console.log(message);
+console.log(message);
+
+/*
+ * Напиши скрипт который заменяет регистр каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+
+const string = 'qWeRTzxCv';
+const letters = string.split('');
+let invertedString = '';
+
+/* for (const letter of letters) {
+    if (letter === letter.toUpperCase()) {
+        invertedString += letter.toLowerCase();
+    }
+    else {
+        invertedString += letter.toUpperCase();
+    }
+} */
+
+for (const letter of letters) {
+    const isEqual = letter === letter.toUpperCase();
+
+    invertedString += isEqual ? letter.toLowerCase() : letter.toUpperCase();
+}
+console.log(`invertedString: ${invertedString}`);
+
+
+/*
+ * Делаем slug в URL из названия статьи (например на dev.to)
+ * Заголовок статьи состоит только из букв и пробелов
+ *
+ * - Нормализируем строку
+ * - Разбиваем по словам
+ * - Сшиваем в строку с разделителями
+ */
+
+// Должно получиться top-10-benefits-of-react-framework
+const title = 'Top 10 benefits of React framework';
+
+//привести к нормализации - привести к массиву c разделителем "пробел" - его же объединить через "-":
+const words = title.toLowerCase().split(' ').join('-');
+console.log(words);
+
