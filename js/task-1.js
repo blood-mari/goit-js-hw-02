@@ -1,4 +1,9 @@
-const getItemsString = function(array) {
+/*
+Напиши функцию logItems(array), которая получает массив и использует цикл for, который для каждого элемента массива будет выводить в консоль сообщение в формате [номер элемента] - [значение элемента].
+
+Нумерация должна начинаться с 1. */
+
+const getItemsString = function (array) {
     'use strict';
     let number =0;
     let result ="";

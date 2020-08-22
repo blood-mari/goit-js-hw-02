@@ -71,6 +71,25 @@ const message = logins.includes(loginToFind)
 
 console.log(message);
 
+/* for (const login of allLogins) {
+    if (ligin === loginToFind) {
+    return `Пользователь ${loginToFind} найден.`;
+    }
+}
+return `Пользователь ${loginToFind} не найден.`;
+*/
+
+const findLogin = function (allLogins, loginToFind) {
+    return allLogins.includes(loginToFind)
+      ? `Пользователь ${loginToFind} найден.`
+      : `Пользователь ${loginToFind} не найден.`;
+  };
+
+  console.log(findLogin(logins, 'avocod3r'));
+  console.log(findLogin(logins, 'k1widab3st'));
+  console.log(findLogin(logins, 'jam4l'));
+  console.log(findLogin(logins, 'poly1scute'));
+
 /*
  * Напиши скрипт который заменяет регистр каждого символа в строке на противоположный.
  * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
@@ -96,6 +115,24 @@ for (const letter of letters) {
 }
 console.log(`invertedString: ${invertedString}`);
 
+const changeCase = function (string) {
+    const letters = string.split('');
+    let invertedString = '';
+
+    for (const letter of letters) {
+      const isInLowerCase = letter === letter.toLowerCase();
+
+      invertedString += isInLowerCase
+        ? letter.toUpperCase()
+        : letter.toLowerCase();
+    }
+
+    return invertedString;
+  };
+
+  console.log(changeCase('qweRTY')); // QWErty
+  console.log(changeCase('mAnGo')); // MaNgO
+console.log(changeCase('AjAx')); // aJaX
 
 /*
  * Делаем slug в URL из названия статьи (например на dev.to)
@@ -112,4 +149,12 @@ const title = 'Top 10 benefits of React framework';
 //привести к нормализации - привести к массиву c разделителем "пробел" - его же объединить через "-":
 const words = title.toLowerCase().split(' ').join('-');
 console.log(words);
+
+const slugify = function (string) {
+    return string.toLowerCase().split(' ').join('-');
+};
+
+console.log(slugify('Top 10 benefits of React framework'));
+console.log(slugify('Azure Static Web Apps are Awesome'));
+console.log(slugify('Technical writing tips for non-native English speakers'));
 
